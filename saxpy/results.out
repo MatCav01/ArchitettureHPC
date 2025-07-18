@@ -1,0 +1,24 @@
+Serial version:
+sum: 908505115.32  dt: 65.68 msec
+ 
+OpenMP version:
+sum: 908505115.32  dt: 71.04 msec
+ 
+CUDA version:
+sum: 908505115.32  dt: 164.58 msec
+ 
+OpenMP target version:
+sum: 908505115.32  dt: 453.96 msec
+ 
+MPI version:
+sum: 908505115.32  dt: 374.40 msec
+ 
+MPI + OpenMP version:
+sum: 908505115.32  dt: 347.12 msec
+ 
+MPI + CUDA version:
+sum: 50000801.64  dt: 0.00 msec
+ 
+MPI + OpenMP target version:
+sum: 908505115.32  dt: 2352.43 msec
+ 

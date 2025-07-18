@@ -1,0 +1,4 @@
+module load devtoolset-11 per utilizzare il compiler più recente tra quelli installati
+(utilizza gcc-11.2.1 invece di gcc-4.8.5)
+
+-mfma = utilizza le fused multiplies additions (fonde moltiplicazioni e addizioni poichè usate assieme)

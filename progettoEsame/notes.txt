@@ -1,0 +1,25 @@
+Heat diffusion
+
+immagine 512x512
+barra colorata ("calda") sul lato destro
+bordi superiore, sinistro e inferiore mantenuti a 0 (freddi) di 1 px
+
+altri casi:
+    - sfera calda al centro e i 4 bordi sono freddi (valori della sfera da non modificare)
+    - bordi destro e sinistro caldi e bordi superiore e inferiore freddi
+
+GLX, GLY = dimensione immagine senza bordi
+HX, HY = bordi destro e sinistro, superiore e inferiore
+GX = GLX + 2 * HX
+GY = GLY + 2 * HY
+
+make -DGLX=1024 definisce una macro GLX con valore 1024 (il -D è un'opzione di gcc)
+
+
+GLYH2 = GLY / 2
+
+GFLOPs = #ops * #iters * dim_img_x * dim_img_y / tempo in nsec
+
+1 solo video ma
+checksum fra i lattice delle varie versioni (sommo tutti i valori della grid)
+--> se = allora si assume risultato corretto

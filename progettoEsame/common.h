@@ -102,3 +102,16 @@ void dump(double *grid, const char *filename)
     
     fclose(file);
 }
+
+double checksum(double *grid)
+{
+    double chk = 0.0;
+    for (int i = HY; i < GY - HY; i++)
+    {
+        for (int j = HX; j < GX - HX; j++)
+        {
+            chk += grid[i * GX + j];
+        }
+    }
+    return chk;
+}

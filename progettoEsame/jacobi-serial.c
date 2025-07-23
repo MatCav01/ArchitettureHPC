@@ -11,7 +11,7 @@ int main()
 {
     int err;
     double *grid, *grid_new, *grid_tmp;
-    double t0, dt;
+    double t0, dt, chk;
 #if DUMP == 1
     char myfile[32];
 #endif
@@ -70,8 +70,10 @@ int main()
     dump(grid, myfile);
 #endif
 
-    printf("[statistics] %dx%d  %d iter  dt: %.3f msec  dt/iter: %.3f usec  GFLOPS: %.3f\n",
-        GLX, GLY, MAXITER, dt, dt * 1e3 / (double)MAXITER, 5.0 * (double)MAXITER * (double)GLX * (double)GLY / (dt * 1e6));
+    chk = checksum(grid);
+
+    printf("[statistics] %dx%d  %d iter  dt: %.3f msec  dt/iter: %.3f usec  GFLOPS: %.3f  checksum: %f\n",
+        GLX, GLY, MAXITER, dt * 1e3, dt * 1e6 / (double)MAXITER, 5.0 * (double)MAXITER * (double)GLX * (double)GLY / (dt * 1e6), chk);
 
     return 0;
 }

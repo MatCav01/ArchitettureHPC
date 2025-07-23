@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=jacobi-serial
-#SBATCH --output=jacobi-serial.out
+#SBATCH --job-name=jacobi-omp
+#SBATCH --output=jacobi-omp.out
 #SBATCH --time=00:10:00
 #SBATCH --nodes=1
 #SBATCH --mem=128000
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=16
 #SBATCH --cpu-freq=performance
 #SBATCH --exclusive
 #SBATCH --partition=skyvolta
@@ -26,7 +26,7 @@ then
 fi
 
 # compile here to optimize for the target architecture
-make GLX=$GLX GLY=$GLY MAXITER=$MAXITER DUMP=$DUMP DUMPSTEP=$DUMPSTEP jacobi-serial
+make GLX=$GLX GLY=$GLY MAXITER=$MAXITER DUMP=$DUMP DUMPSTEP=$DUMPSTEP jacobi-omp
 
 if [[ $? != 0 ]];
 then
@@ -36,4 +36,7 @@ else
     echo "compilation SUCCEEDED."
 fi
 
-./jacobi-serial
+export OMP_PLACES=cores     # place threads on hardware cores
+export OMP_PROC_BIND=close  # place threads close each other
+
+srun ./jacobi-omp

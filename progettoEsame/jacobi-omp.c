@@ -21,13 +21,13 @@ int main()
     err = posix_memalign((void **) &grid, 4096, GX * GY * sizeof(double));
     if (err != 0)
     {
-        fprintf(stderr, "grid posix_memaling error!");
+        fprintf(stderr, "grid posix_memaling error!\n");
         exit(-1);
     }
     err = posix_memalign((void **) &grid_new, 4096, GX * GY * sizeof(double));
     if (err != 0)
     {
-        fprintf(stderr, "grid_new posix_memaling error!");
+        fprintf(stderr, "grid_new posix_memaling error!\n");
         exit(-1);
     }
 

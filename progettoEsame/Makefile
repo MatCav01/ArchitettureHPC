@@ -13,7 +13,7 @@ jacobi-cuda: common.h jacobi-cuda.cu
 	nvcc -O3 -gencode arch=compute_35,code=sm_35 -Xcompiler -fopenmp -o jacobi-cuda jacobi-cuda.cu
 
 jacobi-omptarget: common.h jacobi-omptarget.c
-	nvc ${CFLAGS} -Minfo --ptxas-options=-v -mp=gpu -gpu=cc70 -o jacobi-omptarget jacobi-omptarget.c
+	nvc ${CFLAGS} ${FLAGS} -Minfo --ptxas-options=-v -mp=gpu -gpu=cc70 -o jacobi-omptarget jacobi-omptarget.c
 
 jacobi-mpi: common.h jacobi-mpi.c
 	mpicc ${CFLAGS} -o jacobi-mpi jacobi-mpi.c

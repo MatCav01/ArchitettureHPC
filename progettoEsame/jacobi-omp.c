@@ -14,6 +14,9 @@ int main()
     int err;
     double *grid, *grid_new, *grid_tmp;
     double t0, dt, chk;
+#if DUMP == 1
+    char myfile[32];
+#endif
 
     err = posix_memalign((void **) &grid, 4096, GX * GY * sizeof(double));
     if (err != 0)
@@ -38,6 +41,11 @@ int main()
 
         memcpy(grid_new, grid, GX * GY * sizeof(double));
 
+#if DUMP == 1
+        sprintf(myfile, "video/grid-%07d", 0);
+        dump(grid, myfile);
+#endif
+
         t0 = omp_get_wtime();
 
         for(int iter = 1; iter <= MAXITER; iter++)
@@ -56,6 +64,14 @@ int main()
                 }
             }
 
+#if DUMP == 1
+            if (th == MAXNUMTHREADS && iter % DUMPSTEP == 0)
+            {
+                sprintf(myfile, "video/grid-%07d", iter);
+                dump(grid_new, myfile);
+            }
+#endif
+
             grid_tmp = grid;
             grid = grid_new;
             grid_new = grid_tmp;
@@ -67,8 +83,14 @@ int main()
 
         printf("[statistics] %dx%d  %d iter  th: %d  dt: %.3f msec  dt/iter: %.3f usec  GFLOPS: %.3f  checksum: %f\n",
             GLX, GLY, MAXITER, th, dt * 1e3, dt * 1e6 / (double)MAXITER, 5.0 * (double)MAXITER * (double)GLX * (double)GLY / (dt * 1e6), chk);
-        
-#if DUMP == 2
+
+#if DUMP == 1
+        if (th == MAXNUMTHREADS)
+        {
+            sprintf(myfile, "video/grid-%07d", MAXITER);
+            dump(grid, myfile);
+        }
+#elif DUMP == 2
         fprintf(myfile, "th: %d  dt: %f\n", th, dt);
 #endif
 

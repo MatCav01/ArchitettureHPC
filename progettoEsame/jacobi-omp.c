@@ -100,5 +100,8 @@ int main()
     fclose(myfile);
 #endif
 
+    free(grid);
+    free(grid_new);
+
     return 0;
 }

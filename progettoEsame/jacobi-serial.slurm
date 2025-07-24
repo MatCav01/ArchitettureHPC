@@ -9,7 +9,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --cpu-freq=performance
 #SBATCH --exclusive
-#SBATCH --partition=skyvolta
+#SBATCH --partition=shortrun
 
 module load devtoolset-11
 

@@ -58,7 +58,7 @@ int main()
                 // {
                 //     printf("Thread %d is doing row %d\n", th, i);
                 // }
-                for (int j = HY; j < GX - HX; j++)
+                for (int j = HX; j < GX - HX; j++)
                 {
                     grid_new[i * GX + j] = (grid[i * GX + j] + grid[(i - 1) * GX + j] + grid[(i + 1) * GX + j] + grid[i * GX + j - 1] + grid[i * GX + j + 1]) / 5;
                 }

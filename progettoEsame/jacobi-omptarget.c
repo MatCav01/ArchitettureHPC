@@ -50,7 +50,7 @@ int main()
         #pragma omp target teams distribute parallel for
         for (int i = HY; i < GY - HY; i++)
         {
-            for (int j = HY; j < GX - HX; j++)
+            for (int j = HX; j < GX - HX; j++)
             {
                 grid_new[i * GX + j] = (grid[i * GX + j] + grid[(i - 1) * GX + j] + grid[(i + 1) * GX + j] + grid[i * GX + j - 1] + grid[i * GX + j + 1]) / 5;
             }
@@ -62,7 +62,7 @@ int main()
         #pragma omp target teams distribute parallel for
         for (int i = HY; i < GY - HY; i++)
         {
-            for (int j = HY; j < GX - HX; j++)
+            for (int j = HX; j < GX - HX; j++)
             {
                 grid[i * GX + j] = (grid_new[i * GX + j] + grid_new[(i - 1) * GX + j] + grid_new[(i + 1) * GX + j] + grid_new[i * GX + j - 1] + grid_new[i * GX + j + 1]) / 5;
             }
@@ -74,7 +74,7 @@ int main()
         if (iter % DUMPSTEP == 0)
         {
             sprintf(myfile, "video/grid-%07d", iter);
-            dump(grid_new, myfile);
+            dump(grid, myfile);
         }
 #endif
 

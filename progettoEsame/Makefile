@@ -23,7 +23,7 @@ jacobi-mpiomp: common.h jacobi-mpiomp.c
 
 jacobi-mpicuda: common.h jacobi-mpicuda-kernel.cu jacobi-mpicuda.c
 	nvcc -O3 -gencode arch=compute_35,code=sm_35 ${FLAGS} -Xcompiler -fopenmp -o jacobi-mpicuda-kernel.o -c jacobi-mpicuda-kernel.cu
-	mpicc ${CFLAGS} -L${NVHPC_ROOT}/cuda/11.8/targets/x86_64-linux/lib -lmpi -lcudart -lcuda -o jacobi-mpicuda jacobi-mpicuda.c jacobi-mpicuda-kernel.o
+	mpicc ${CFLAGS} ${FLAGS} -L${NVHPC_ROOT}/cuda/11.8/targets/x86_64-linux/lib -lmpi -lcudart -lcuda -o jacobi-mpicuda jacobi-mpicuda.c jacobi-mpicuda-kernel.o
 	
 jacobi-mpiomptarget: common.h jacobi-mpiomptarget.c
 	mpicc ${CFLAGS} ${FLAGS} -Minfo -mp=gpu -gpu=cc70 -o jacobi-mpiomptarget jacobi-mpiomptarget.c

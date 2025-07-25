@@ -32,11 +32,11 @@
 
 #define K 64
 
-int GLXH2 = (int)(GLX / 2);
-int GLYH2 = (int)(GLY / 2);
-
 void init(double *grid)
 {
+    int GLXH2 = (int)(GLX / 2);
+    int GLYH2 = (int)(GLY / 2);
+
     for (int i = 0; i < GY; i++)
     {
         for (int j = 0; j < GX; j++)

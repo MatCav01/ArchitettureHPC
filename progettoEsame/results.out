@@ -1,0 +1,38 @@
+Serial version:
+[statistics] 512x512  10000 iter  dt: 6172.805 msec  dt/iter: 617.281 usec  GFLOPS: 2.123  checksum: 9283712.331742
+ 
+OpenMP version:
+[statistics] 512x512  10000 iter  th: 1  dt: 6011.611 msec  dt/iter: 601.161 usec  GFLOPS: 2.180  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 2  dt: 3026.202 msec  dt/iter: 302.620 usec  GFLOPS: 4.331  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 3  dt: 2174.139 msec  dt/iter: 217.414 usec  GFLOPS: 6.029  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 4  dt: 1702.693 msec  dt/iter: 170.269 usec  GFLOPS: 7.698  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 5  dt: 1427.224 msec  dt/iter: 142.722 usec  GFLOPS: 9.184  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 6  dt: 1252.804 msec  dt/iter: 125.280 usec  GFLOPS: 10.462  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 7  dt: 1118.141 msec  dt/iter: 111.814 usec  GFLOPS: 11.722  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 8  dt: 970.017 msec  dt/iter: 97.002 usec  GFLOPS: 13.512  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 9  dt: 877.128 msec  dt/iter: 87.713 usec  GFLOPS: 14.943  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 10  dt: 808.056 msec  dt/iter: 80.806 usec  GFLOPS: 16.221  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 11  dt: 741.462 msec  dt/iter: 74.146 usec  GFLOPS: 17.678  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 12  dt: 688.256 msec  dt/iter: 68.826 usec  GFLOPS: 19.044  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 13  dt: 646.880 msec  dt/iter: 64.688 usec  GFLOPS: 20.262  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 14  dt: 611.245 msec  dt/iter: 61.125 usec  GFLOPS: 21.443  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 15  dt: 581.107 msec  dt/iter: 58.111 usec  GFLOPS: 22.556  checksum: 9283712.331742
+[statistics] 512x512  10000 iter  th: 16  dt: 547.785 msec  dt/iter: 54.778 usec  GFLOPS: 23.928  checksum: 9283712.331742
+ 
+CUDA version:
+[statistics] 512x512  10000 iter  dt: 2140.562 msec  dt/iter: 214.056 usec  GFLOPS: 6.123  checksum: 9283712.331742
+ 
+OpenMP target version:
+[statistics] 512x512  10000 iter  dt: 10486.703 msec  dt/iter: 1048.670 usec  GFLOPS: 1.250  checksum: 9283712.331742
+ 
+MPI version:
+[statistics] 512x512  10000 iter  dt: 677.743 msec  dt/iter: 67.774 usec  GFLOPS: 19.339  checksum: 9283712.331742
+ 
+MPI + OpenMP version:
+[statistics] 512x512  10000 iter  dt: 618.608 msec  dt/iter: 61.861 usec  GFLOPS: 21.188  checksum: 9283712.331742
+ 
+MPI + CUDA version:
+[statistics] 512x512  10000 iter  dt: 202226.283 msec  dt/iter: 20222.628 usec  GFLOPS: 0.065  checksum: 9283712.331742
+ 
+MPI + OpenMP target version:
+ 

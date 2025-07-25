@@ -5,33 +5,33 @@ exec > >(tee -a results.out)
 # basedir=`basename $PWD`
 
 echo "Serial version:"
-grep dt: jacobi-serial.out
+grep statistics jacobi-serial.out
 echo " "
 
 echo "OpenMP version:"
-grep dt: jacobi-omp.out
+grep statistics jacobi-omp.out
 echo " "
 
 echo "CUDA version:"
-grep dt: jacobi-cuda.out
+grep statistics jacobi-cuda.out
 echo " "
 
 echo "OpenMP target version:"
-grep dt: jacobi-omptarget.out
+grep statistics jacobi-omptarget.out
 echo " "
 
 echo "MPI version:"
-grep dt: jacobi-mpi.out
+grep statistics jacobi-mpi.out
 echo " "
 
 echo "MPI + OpenMP version:"
-grep dt: jacobi-mpiomp.out
+grep statistics jacobi-mpiomp.out
 echo " "
 
 echo "MPI + CUDA version:"
-grep dt: jacobi-mpicuda.out
+grep statistics jacobi-mpicuda.out
 echo " "
 
 echo "MPI + OpenMP target version:"
-grep dt: jacobi-mpiomptarget.out
+grep statistics jacobi-mpiomptarget.out
 echo " "

@@ -92,7 +92,7 @@ int main()
     chk = checksum(grid);
 
     printf("[statistics] %dx%d  %d iter  dt: %.3f msec  dt/iter: %.3f usec  GFLOPS: %.3f  checksum: %f\n",
-        GLX, GLY, MAXITER, dt * 1e3, dt * 1e6 / (double)MAXITER, 5.0 * (double)MAXITER * (double)GLX * (double)GLY / (dt * 1e6), chk);
+        GLX, GLY, MAXITER, dt * 1e3, dt * 1e6 / (double)MAXITER, 5.0 * (double)MAXITER * (double)GLX * (double)GLY / (dt * 1e9), chk);
 
     free(grid);
     free(grid_new);

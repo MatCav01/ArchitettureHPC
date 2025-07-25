@@ -50,7 +50,7 @@ int main()
 
         for(int iter = 1; iter <= MAXITER; iter++)
         {
-            #pragma omp parallel for shared(grid) num_threads(th) schedule(static)
+            #pragma omp parallel for num_threads(th) schedule(static)
             for (int i = HY; i < GY - HY; i++)
             {
                 // int th = omp_get_thread_num();

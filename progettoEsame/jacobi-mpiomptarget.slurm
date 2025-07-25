@@ -17,7 +17,7 @@ unset CUDA_VISIBLE_DEVICES
 
 module load devtoolset-11
 module load openmpi/1.10.4
-module load nvhpc/24.7
+module load nvhpc-nompi/24.7
 
 export OMPI_CC=nvc
 

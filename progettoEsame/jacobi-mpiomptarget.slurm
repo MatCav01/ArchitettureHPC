@@ -11,7 +11,7 @@
 #SBATCH --exclusive
 #SBATCH --partition=skyvolta
 #SBATCH --nodelist=node06
-#SBATCH --gres=gpu:v100
+#SBATCH --gres=gpu:v100:2
 
 unset CUDA_VISIBLE_DEVICES
 

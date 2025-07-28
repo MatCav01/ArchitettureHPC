@@ -45,9 +45,3 @@ else
 fi
 
 srun ./jacobi-mpiomptarget
-
-echo " "
-
-sacct -j $SLURM_JOB_ID.0 --format=JobID%16,AllocNodes,NTasks,Elapsed,ConsumedEnergy
-
-echo " "

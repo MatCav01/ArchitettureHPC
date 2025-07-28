@@ -35,4 +35,5 @@ MPI + CUDA version:
 [statistics] 512x512  10000 iter  dt: 202226.283 msec  dt/iter: 20222.628 usec  GFLOPS: 0.065  checksum: 9283712.331742
  
 MPI + OpenMP target version:
+[statistics] 512x512  10000 iter  dt: 15543.582 msec  dt/iter: 1554.358 usec  GFLOPS: 0.843  checksum: 9283712.331742
  

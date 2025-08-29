@@ -38,13 +38,17 @@ int main()
     dump(grid, myfile);
 #endif
 
+    // chk = checksum(grid);
+    // printf("checksum: %")
     #pragma omp target enter data map(alloc: grid[0:(GX * GY)], grid_new[0:(GX * GY)])
+
+    #pragma omp target update to(grid[0:(GX * GY)], grid_new[0:(GX * GY)])
 
     t0 = omp_get_wtime();
 
     for(int iter = 1; iter <= MAXITER; iter++)
     {
-        #pragma omp target update to(grid[0:(GX * GY)], grid_new[0:(GX * GY)])
+        // #pragma omp target update to(grid[0:(GX * GY)], grid_new[0:(GX * GY)])
 
         // grid_new <-- grid
         #pragma omp target teams distribute parallel for
@@ -68,9 +72,11 @@ int main()
             }
         }
 
-        #pragma omp target update from(grid[0:(GX * GY)], grid_new[0:(GX * GY)])
+        // #pragma omp target update from(grid[0:(GX * GY)], grid_new[0:(GX * GY)])
 
 #if DUMP == 1
+        #pragma omp target update from(grid[0:(GX * GY)], grid_new[0:(GX * GY)])
+
         if (iter % DUMPSTEP == 0)
         {
             sprintf(myfile, "video/grid-%07d", iter);
@@ -81,6 +87,8 @@ int main()
     }
 
     dt = omp_get_wtime() - t0;
+
+    #pragma omp target update from(grid[0:(GX * GY)], grid_new[0:(GX * GY)])
 
     #pragma omp target exit data map(release: grid[0:(GX * GY)], grid_new[0:(GX * GY)])
 
